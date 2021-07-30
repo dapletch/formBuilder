@@ -16,6 +16,7 @@
 <!-- available to black box testing via: https://dapletch.github.io/formBuilder/ -->
 <div id="fb-editor"></div>
 
+<!-- TODO look into why the SAVE button functionality listed below doesn't work without this piece here -->
 <div class="saveDataWrap">
     <button id="saveData" type="button">Save Form</button>
 </div>
@@ -36,10 +37,12 @@
         const fbEditor = document.getElementById("build-wrap");
         const formBuilder = $(fbEditor).formBuilder();
 
-        document.getElementById("saveData").addEventListener("click", () => {
-            console.log("external save clicked");
-            const result = formBuilder.actions.save();
-            console.log("result:", result);
+        $(window).load(function() {
+            document.querySelector("button.save-template").addEventListener("click", () => {
+                console.log("external save clicked");
+                const result = formBuilder.actions.save();
+                console.log("result:", result);
+            });
         });
     });
 </script>

@@ -38,7 +38,7 @@
         const formBuilder = $(fbEditor).formBuilder();
 
         $(window).load(function() {
-            document.querySelector("button.save-template").addEventListener("click", () => {
+            $("button.save-template").click(function (){
                 console.log("external save clicked");
                 const result = formBuilder.actions.save();
                 console.log("result:", result);

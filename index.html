@@ -16,11 +16,6 @@
 <!-- available to black box testing via: https://dapletch.github.io/formBuilder/ -->
 <div id="fb-editor"></div>
 
-<!-- TODO look into why the SAVE button functionality listed below doesn't work without this piece here -->
-<div class="saveDataWrap">
-    <button id="saveData" type="button">Save Form</button>
-</div>
-
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -28,23 +23,20 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="https://formbuilder.online/assets/js/form-builder.min.js"></script>
 <script>
+    // TODO add JQuery ajax call to save JSON into MongoDB via Rest API endpoint
+    // https://formbuilder.online/docs/formBuilder/options/onSave/
+    const options = {
+        // onSave option enables custom functionality for the SAVE button rendered by formBuilder
+        onSave: function(evt, formData) {
+            console.log("formData: " + formData?.toString())
+            window.sessionStorage.setItem('formData', JSON.stringify(formData));
+        },
+    };
     // loading the formBuilder
     jQuery(function($) {
-        $(document.getElementById('fb-editor')).formBuilder();
+        $(document.getElementById('fb-editor')).formBuilder(options);
     });
-    // Retrieving the values from the formBuilder and saving them
-    jQuery(($) => {
-        const fbEditor = document.getElementById("build-wrap");
-        const formBuilder = $(fbEditor).formBuilder();
 
-        $(window).load(function() {
-            $("button.save-template").click(function (){
-                console.log("external save clicked");
-                const result = formBuilder.actions.save();
-                console.log("result:", result);
-            });
-        });
-    });
 </script>
 </body>
 </html>

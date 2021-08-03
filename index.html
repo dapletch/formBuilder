@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -19,21 +20,29 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 <script src="https://formbuilder.online/assets/js/form-builder.min.js"></script>
 <script>
     // TODO add JQuery ajax call to save JSON into MongoDB via Rest API endpoint
-    // https://formbuilder.online/docs/formBuilder/options/onSave/
     const options = {
+        // formData and type are attributes responsible for setting the default form values
+        // https://formbuilder.online/docs/formBuilder/options/formData/
+        formData: '[{"type":"header","subtype":"h2","label":"General","access":false},{"type":"text","required":false,"label":"Client Name","placeholder":"Meddling P.I. LLC","className":"form-control","name":"clientName","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Case Number","className":"form-control","name":"caseNumber","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Investigation Type","placeholder":"Surveillance","className":"form-control","name":"investigationType","access":false,"subtype":"text"},{"type":"date","required":false,"label":"Start Date","className":"form-control","name":"startDate","access":false},{"type":"select","required":false,"label":"Case Status","className":"form-control","name":"caseStudies","access":false,"multiple":false,"values":[{"label":"Open","value":"open","selected":true},{"label":"Closed","value":"closed","selected":false}]},{"type":"text","required":false,"label":"Tasking","placeholder":"The objective of this case is to...","className":"form-control","name":"tasking","access":false,"subtype":"text"},{"type":"textarea","required":false,"label":"Conclusions & Recommendations","placeholder":"Based on these findings...","className":"form-control","name":"conclusions","access":false,"subtype":"textarea"}]',
+        dataType: 'json',
         // onSave option enables custom functionality for the SAVE button rendered by formBuilder
-        onSave: function(evt, formData) {
+        // https://formbuilder.online/docs/formBuilder/options/onSave/
+        onSave: function (evt, formData) {
             console.log("formData: " + formData?.toString())
             window.sessionStorage.setItem('formData', JSON.stringify(formData));
         },
     };
     // loading the formBuilder
-    jQuery(function($) {
+    jQuery(function ($) {
         $(document.getElementById('fb-editor')).formBuilder(options);
     });
 

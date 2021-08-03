@@ -8,14 +8,19 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<h2>Case Form Builder</h2>
-<!-- Displaying the JQuery formBuilder -->
-<!-- available to black box testing via: https://dapletch.github.io/formBuilder/ -->
-<div id="fb-editor"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h2>Case Form Builder</h2>
+            <!-- Displaying the JQuery formBuilder -->
+            <!-- available to black box testing via: https://dapletch.github.io/formBuilder/ -->
+            <div id="fb-editor"></div>
+        </div>
+    </div>
+</div>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -47,5 +52,7 @@
     });
 
 </script>
+<!-- CSS styling to override the injected by the formBuilder if so needs be -->
+<link rel="stylesheet" href="css/styles.css">
 </body>
 </html>

@@ -33,14 +33,22 @@
         crossorigin="anonymous"></script>
 <script src="https://formbuilder.online/assets/js/form-builder.min.js"></script>
 <script>
-    // TODO add JQuery ajax call to save JSON into MongoDB via Rest API endpoint
     const options = {
         // formData and type are attributes responsible for setting the default form values
         // https://formbuilder.online/docs/formBuilder/options/formData/
         formData: '[{"type":"header","subtype":"h2","label":"General","access":false},{"type":"text","required":false,"label":"Client Name","placeholder":"Meddling P.I. LLC","className":"form-control","name":"clientName","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Case Number","className":"form-control","name":"caseNumber","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Investigation Type","placeholder":"Surveillance","className":"form-control","name":"investigationType","access":false,"subtype":"text"},{"type":"date","required":false,"label":"Start Date","className":"form-control","name":"startDate","access":false},{"type":"select","required":false,"label":"Case Status","className":"form-control","name":"caseStudies","access":false,"multiple":false,"values":[{"label":"Open","value":"open","selected":true},{"label":"Closed","value":"closed","selected":false}]},{"type":"text","required":false,"label":"Tasking","placeholder":"The objective of this case is to...","className":"form-control","name":"tasking","access":false,"subtype":"text"},{"type":"textarea","required":false,"label":"Conclusions & Recommendations","placeholder":"Based on these findings...","className":"form-control","name":"conclusions","access":false,"subtype":"textarea"}]',
         dataType: 'json',
+        // disabling certain attributes for we'll manage that on our end while building the form
+        // https://formbuilder.online/docs/formBuilder/options/disabledAttrs/
+        disabledAttrs: [
+            'access',
+            'className',
+            'maxlength',
+            'other'
+        ],
         // onSave option enables custom functionality for the SAVE button rendered by formBuilder
         // https://formbuilder.online/docs/formBuilder/options/onSave/
+        // TODO add JQuery ajax call to save JSON into MongoDB via Rest API endpoint
         onSave: function (evt, formData) {
             console.log("formData: " + formData?.toString())
             window.sessionStorage.setItem('formData', JSON.stringify(formData));

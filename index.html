@@ -51,20 +51,12 @@
         // https://formbuilder.online/docs/formBuilder/options/onSave/
         // TODO add JQuery ajax call to save JSON into MongoDB via Rest API endpoint
         onSave: function (evt, formData) {
-            // TODO get working
-            $.ajax({
-                type: "POST",
-                // TODO make URL relative based on controller and action when incorporated into Meteor app
-                url: "http://localhost:8080/api/formBuilder",
-                data: formData,
-                dataType: "json",
-                contentType: "application/json",
-                success : function(data) {
-                    alert('Data: ' + data);
-                },
-                error : function(request, error) {
-                    alert("Request: " + JSON.stringify(request));
-                }
+            $.post("http://localhost:8080/api/formBuilder", {
+                formData
+            },
+            function(data, status) {
+                // TODO check the status along with adding modal display
+                console.log("data: " + data + "\nstatus: " + status)
             });
         },
     };

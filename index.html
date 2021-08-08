@@ -49,8 +49,8 @@
         ],
         // onSave option enables custom functionality for the SAVE button rendered by formBuilder
         // https://formbuilder.online/docs/formBuilder/options/onSave/
-        // TODO add JQuery ajax call to save JSON into MongoDB via Rest API endpoint
         onSave: function (evt, formData) {
+            // TODO make URL relative
             $.post("http://localhost:8080/api/formBuilder", {
                 formData
             },

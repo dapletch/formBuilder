@@ -59,6 +59,8 @@
                     // display the modal
                     $('#formStatusModalText').text(data.message);
                     $('#formStatusModal').modal('show');
+                } else {
+                    console.error(`An error occurred: ${status}`);
                 }
             });
         },

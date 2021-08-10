@@ -7,16 +7,14 @@ class FormBuilderDefaults {
             "label": "Client Name",
             "placeholder": "Meddling P.I. LLC",
             "className": "form-control",
-            "name": "clientName",
-            "subtype": "text"
+            "name": "clientName"
         },
         {
             "type": "text",
             "required": false,
             "label": "Investigation Type",
             "className": "form-control",
-            "name": "investigationType",
-            "subtype": "text"
+            "name": "investigationType"
         },
         {
             "type": "date",
@@ -45,16 +43,14 @@ class FormBuilderDefaults {
             "label": "Tasking",
             "placeholder": "The objective of this case is to...",
             "className": "form-control",
-            "name": "tasking",
-            "subtype": "text"
+            "name": "tasking"
         },
         {
             "type": "textarea",
             "required": false,
             "label": "Conclusions &amp; Recommendations",
             "className": "form-control",
-            "name": "conclusions",
-            "subtype": "textarea"
+            "name": "conclusions"
         }
     ];
 

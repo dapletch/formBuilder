@@ -54,11 +54,59 @@ class FormBuilderDefaults {
         }
     ];
 
-    // TODO finish creating schema
-    static SUBJECTS_DEFAULT_SCHEMA = [];
+    static SUBJECTS_DEFAULT_SCHEMA = [
+        {
+            "type" : "text",
+            "required" : false,
+            "label" : "Name",
+            "placeholder" : "John Doe",
+            "className" : "form-control",
+            "name" : "name"
+        },
+        {
+            "type" : "text",
+            "required" : false,
+            "label" : "Description",
+            "placeholder" : "Subject 1",
+            "className" : "form-control",
+            "name" : "description"
+        },
+        {
+            "type" : "textarea",
+            "required" : false,
+            "label" : "Notes",
+            "placeholder" : "Additional notes go here...",
+            "className" : "form-control",
+            "name" : "notes"
+        }
+    ];
 
-    // TODO finish creating schema
-    static ADDRESSES_DEFAULT_SCHEMA = [];
+    static ADDRESSES_DEFAULT_SCHEMA = [
+        {
+            "type" : "text",
+            "required" : false,
+            "label" : "Address",
+            "placeholder" : "123 Main St., Plainfield, VT, 05301",
+            "className" : "form-control",
+            "name" : "address"
+        },
+        {
+            "type" : "text",
+            "required" : false,
+            "label" : "Description",
+            "placeholder" : "Home of Subject",
+            "className" : "form-control",
+            "name" : "description"
+        },
+        {
+            "type" : "textarea",
+            "required" : false,
+            "label" : "Notes",
+            "placeholder" : "Additional notes go here...",
+            "className" : "form-control",
+            "name" : "notes"
+        }
+    ];
 
     // TODO finish creating schema
     static VEHICLES_DEFAULT_SCHEMA = [];

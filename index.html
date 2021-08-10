@@ -16,8 +16,38 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <h2>Case Form Builder</h2>
-            <div id="fb-editor"></div>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="general-tab" data-toggle="tab" href="#general" role="tab"
+                       aria-controls="general" aria-selected="true">General</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="subjects-tab" data-toggle="tab" href="#subjects" role="tab"
+                       aria-controls="profile" aria-selected="false">Subjects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="addresses-tab" data-toggle="tab" href="#addresses" role="tab"
+                       aria-controls="addresses" aria-selected="false">Addresses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="vehicles-tab" data-toggle="tab" href="#vehicles" role="tab"
+                       aria-controls="addresses" aria-selected="false">Vehicles</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+                    <div id="fb-editor-1"></div>
+                </div>
+                <div class="tab-pane fade" id="subjects" role="tabpanel" aria-labelledby="subjects-tab">
+                    <div id="fb-editor-2"></div>
+                </div>
+                <div class="tab-pane fade" id="addresses" role="tabpanel" aria-labelledby="addresses-tab">
+                    <div id="fb-editor-3"></div>
+                </div>
+                <div class="tab-pane fade" id="vehicles" role="tabpanel" aria-labelledby="vehicles-tab">
+                    <div id="fb-editor-4"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -69,9 +99,13 @@
                 });
         },
     };
-    // loading the formBuilder
+    // formBuilder tab 1
     jQuery(function ($) {
-        $(document.getElementById('fb-editor')).formBuilder(options);
+        $(document.getElementById('fb-editor-1')).formBuilder(options);
+    });
+    // formBuilder tab 2
+    jQuery(function ($) {
+        $(document.getElementById('fb-editor-2')).formBuilder({formData: JSON.stringify(FormBuilderDefaults.SUBJECTS_DEFAULT_SCHEMA)});
     });
 
 </script>

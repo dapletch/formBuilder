@@ -108,6 +108,30 @@ class FormBuilderDefaults {
         }
     ];
 
-    // TODO finish creating schema
-    static VEHICLES_DEFAULT_SCHEMA = [];
+    static VEHICLES_DEFAULT_SCHEMA = [
+        {
+            "type" : "text",
+            "required" : false,
+            "label" : "Vehicle",
+            "placeholder" : "1999 / VW Jetta / Green / ABC123",
+            "className" : "form-control",
+            "name" : "vehicle"
+        },
+        {
+            "type" : "text",
+            "required" : false,
+            "label" : "Description",
+            "placeholder" : "Vehicle of Subject",
+            "className" : "form-control",
+            "name" : "description"
+        },
+        {
+            "type" : "textarea",
+            "required" : false,
+            "label" : "Notes",
+            "placeholder" : "Additional notes go here...",
+            "className" : "form-control",
+            "name" : "notes"
+        }
+    ];
 }

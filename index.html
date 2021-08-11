@@ -64,11 +64,7 @@
 <script src="https://formbuilder.online/assets/js/form-builder.min.js"></script>
 <script src="assets/js/formBuilderDefaults.js"></script>
 <script>
-    let form = JSON.stringify(FormBuilderDefaults.GENERAL_DEFAULT_SCHEMA);
-    const options = {
-        // formData and type are attributes responsible for setting the default form values
-        // https://formbuilder.online/docs/formBuilder/options/formData/
-        formData: form,
+    let options = {
         dataType: 'json',
         // disabling certain attributes for we'll manage that on our end while building the form
         // https://formbuilder.online/docs/formBuilder/options/disabledAttrs/
@@ -99,21 +95,29 @@
                 });
         },
     };
+
+    // formData and type are attributes responsible for setting the default form values
+    // https://formbuilder.online/docs/formBuilder/options/formData/
+
     // formBuilder tab 1
     jQuery(function ($) {
+        options.formData = JSON.stringify(FormBuilderDefaults.GENERAL_DEFAULT_SCHEMA);
         $(document.getElementById('fb-editor-1')).formBuilder(options);
     });
     // formBuilder tab 2
     jQuery(function ($) {
-        $(document.getElementById('fb-editor-2')).formBuilder({formData: JSON.stringify(FormBuilderDefaults.SUBJECTS_DEFAULT_SCHEMA)});
+        options.formData = JSON.stringify(FormBuilderDefaults.SUBJECTS_DEFAULT_SCHEMA);
+        $(document.getElementById('fb-editor-2')).formBuilder(options);
     });
     // formBuilder tab 3
     jQuery(function ($) {
-        $(document.getElementById('fb-editor-3')).formBuilder({formData: JSON.stringify(FormBuilderDefaults.ADDRESSES_DEFAULT_SCHEMA)});
+        options.formData = JSON.stringify(FormBuilderDefaults.ADDRESSES_DEFAULT_SCHEMA);
+        $(document.getElementById('fb-editor-3')).formBuilder(options);
     });
     // formBuilder tab 4
     jQuery(function ($) {
-        $(document.getElementById('fb-editor-4')).formBuilder({formData: JSON.stringify(FormBuilderDefaults.VEHICLES_DEFAULT_SCHEMA)});
+        options.formData = JSON.stringify(FormBuilderDefaults.VEHICLES_DEFAULT_SCHEMA);
+        $(document.getElementById('fb-editor-4')).formBuilder(options);
     });
 
 </script>

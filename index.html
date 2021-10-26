@@ -83,47 +83,59 @@
         ],
         // onSave option enables custom functionality for the SAVE button rendered by formBuilder
         // https://formbuilder.online/docs/formBuilder/options/onSave/
-        onSave: function (evt, formData) {
+        onSave: function (evt, formData)
+        {
             // TODO make URL relative
-            $.post("http://localhost:8080/api/formBuilder", {
+            $.post("http://localhost:8080/api/formBuilder",
+                {
                     'setting': setting,
                     'formData': formData
                 },
-                function (data, status) {
-                    if (status === 'success') {
+                function (data, status)
+                {
+                    if (status === 'success')
+                    {
                         // display the modal
                         $('#formStatusModalText').text(data.message);
                         $('#formStatusModal').modal('show');
-                    } else {
+                    }
+                    else {
                         console.error(`An error occurred: ${status}`);
                     }
-                });
+                }
+            );
         },
     };
 
     // formData and type are attributes responsible for setting the default form values
     // https://formbuilder.online/docs/formBuilder/options/formData/
+    let formConfig = [
+        // formBuilder tab 1
+        {
+            'fb-editor-1': FormBuilderDefaults.GENERAL_DEFAULT_SCHEMA
+        },
+        // formBuilder tab 2
+        {
+            'fb-editor-2': FormBuilderDefaults.SUBJECTS_DEFAULT_SCHEMA
+        },
+        // formBuilder tab 3
+        {
+            'fb-editor-3': FormBuilderDefaults.ADDRESSES_DEFAULT_SCHEMA
+        },
+        // formBuilder tab 4
+        {
+            'fb-editor-4': FormBuilderDefaults.VEHICLES_DEFAULT_SCHEMA
+        }
+    ];
 
-    // formBuilder tab 1
-    jQuery(function ($) {
-        options.formData = JSON.stringify(FormBuilderDefaults.GENERAL_DEFAULT_SCHEMA);
-        $(document.getElementById('fb-editor-1')).formBuilder(options);
-    });
-    // formBuilder tab 2
-    jQuery(function ($) {
-        options.formData = JSON.stringify(FormBuilderDefaults.SUBJECTS_DEFAULT_SCHEMA);
-        $(document.getElementById('fb-editor-2')).formBuilder(options);
-    });
-    // formBuilder tab 3
-    jQuery(function ($) {
-        options.formData = JSON.stringify(FormBuilderDefaults.ADDRESSES_DEFAULT_SCHEMA);
-        $(document.getElementById('fb-editor-3')).formBuilder(options);
-    });
-    // formBuilder tab 4
-    jQuery(function ($) {
-        options.formData = JSON.stringify(FormBuilderDefaults.VEHICLES_DEFAULT_SCHEMA);
-        $(document.getElementById('fb-editor-4')).formBuilder(options);
-    });
+    for (let i = 0; i < formConfig.length; i++)
+    {
+        jQuery(function ($)
+        {
+            options.formData = JSON.stringify(Object.values(formConfig[i])[0]);
+            $(document.getElementById(Object.keys(formConfig[i])[0])).formBuilder(options);
+        });
+    }
 
 </script>
 <!-- Modal -->

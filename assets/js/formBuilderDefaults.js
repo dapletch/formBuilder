@@ -4,6 +4,8 @@ class FormBuilderDefaults {
     static DEFAULT_CASE_SCHEMA = {
         "caseNumber": 0,
         "userId": "w4sGxWrab8h8a2yn9",
+        "dateCreated": new Date(),
+        "lastUpdated": new Date(),
         "general": [
             {
                 "type": "text",

@@ -1,6 +1,157 @@
 class FormBuilderDefaults {
 
     // TODO incorporate into form builder
+    static DEFAULT_CASE_SCHEMA = {
+        "caseNumber": 0,
+        "userId": "w4sGxWrab8h8a2yn9",
+        "general": [
+            {
+                "type": "text",
+                "required": false,
+                "label": "Client Name",
+                "placeholder": "Meddling P.I. LLC",
+                "className": "form-control",
+                "name": "clientName",
+                "value": ""
+            },
+            {
+                "type": "text",
+                "required": false,
+                "label": "Investigation Type",
+                "className": "form-control",
+                "name": "investigationType",
+                "value": ""
+            },
+            {
+                "type": "date",
+                "required": false,
+                "label": "Start Date",
+                "className": "form-control",
+                "name": "startDate",
+                "value": "2021-10-27"
+            },
+            {
+                "type": "checkbox-group",
+                "required": false,
+                "label": "Case Status",
+                "toggle": true,
+                "name": "caseStatus",
+                "values": [
+                    {
+                        "label": "Open/Closed",
+                        "value": "open",
+                        "selected": true
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "required": false,
+                "label": "Tasking",
+                "placeholder": "The objective of this case is to...",
+                "className": "form-control",
+                "name": "tasking",
+                "value": ""
+            },
+            {
+                "type": "textarea",
+                "required": false,
+                "label": "Conclusions &amp; Recommendations",
+                "className": "form-control",
+                "name": "conclusions",
+                "value": ""
+            }
+        ],
+        "subjects": [
+            {
+                "type" : "text",
+                "required" : false,
+                "label" : "Name",
+                "placeholder" : "John Doe",
+                "className" : "form-control",
+                "name" : "name",
+                "value": ""
+            },
+            {
+                "type" : "text",
+                "required" : false,
+                "label" : "Description",
+                "placeholder" : "Subject 1",
+                "className" : "form-control",
+                "name" : "description",
+                "value": ""
+            },
+            {
+                "type" : "textarea",
+                "required" : false,
+                "label" : "Notes",
+                "placeholder" : "Additional notes go here...",
+                "className" : "form-control",
+                "name" : "notes",
+                "value": ""
+            }
+        ],
+        "addresses": [
+            {
+                "type" : "text",
+                "required" : false,
+                "label" : "Address",
+                "placeholder" : "123 Main St., Plainfield, VT, 05301",
+                "className" : "form-control",
+                "name" : "address",
+                "value": ""
+            },
+            {
+                "type" : "text",
+                "required" : false,
+                "label" : "Description",
+                "placeholder" : "Home of Subject",
+                "className" : "form-control",
+                "name" : "description",
+                "value": ""
+            },
+            {
+                "type" : "textarea",
+                "required" : false,
+                "label" : "Notes",
+                "placeholder" : "Additional notes go here...",
+                "className" : "form-control",
+                "name" : "notes",
+                "value": ""
+            }
+        ],
+        "vehicles": [
+            {
+                "type" : "text",
+                "required" : false,
+                "label" : "Vehicle",
+                "placeholder" : "1999 / VW Jetta / Green / ABC123",
+                "className" : "form-control",
+                "name" : "vehicle",
+                "value": ""
+            },
+            {
+                "type" : "text",
+                "required" : false,
+                "label" : "Description",
+                "placeholder" : "Vehicle of Subject",
+                "className" : "form-control",
+                "name" : "description",
+                "value": ""
+            },
+            {
+                "type" : "textarea",
+                "required" : false,
+                "label" : "Notes",
+                "placeholder" : "Additional notes go here...",
+                "className" : "form-control",
+                "name" : "notes",
+                "value": ""
+            }
+        ]
+    };
+
+    // TODO incorporate into form builder
     static DEFAULT_FORM_INPUTS = {
         "general": [
             {

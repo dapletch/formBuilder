@@ -83,23 +83,19 @@
         ],
         // onSave option enables custom functionality for the SAVE button rendered by formBuilder
         // https://formbuilder.online/docs/formBuilder/options/onSave/
-        onSave: function (evt, formData)
-        {
+        onSave: function (evt, formData) {
             // TODO make URL relative
             $.post("http://localhost:8080/api/formBuilder",
                 {
                     'setting': setting,
                     'formData': formData
                 },
-                function (data, status)
-                {
-                    if (status === 'success')
-                    {
+                function (data, status) {
+                    if (status === 'success') {
                         // display the modal
                         $('#formStatusModalText').text(data.message);
                         $('#formStatusModal').modal('show');
-                    }
-                    else {
+                    } else {
                         console.error(`An error occurred: ${status}`);
                     }
                 }
@@ -128,13 +124,13 @@
         }
     ];
 
-    for (let i = 0; i < formConfig.length; i++)
-    {
-        jQuery(function ($)
-        {
-            options.formData = JSON.stringify(Object.values(formConfig[i])[0]);
-            $(document.getElementById(Object.keys(formConfig[i])[0])).formBuilder(options);
-        });
+    for (let i = 0; i < formConfig.length; i++) {
+        jQuery(
+            function ($) {
+                options.formData = JSON.stringify(Object.values(formConfig[i])[0]);
+                $(document.getElementById(Object.keys(formConfig[i])[0])).formBuilder(options);
+            }
+        );
     }
 
 </script>

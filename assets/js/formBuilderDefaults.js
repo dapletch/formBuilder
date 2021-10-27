@@ -11,24 +11,21 @@ class FormBuilderDefaults {
                 "label": "Client Name",
                 "placeholder": "Meddling P.I. LLC",
                 "className": "form-control",
-                "name": "clientName",
-                "value": ""
+                "name": "clientName"
             },
             {
                 "type": "text",
                 "required": false,
                 "label": "Investigation Type",
                 "className": "form-control",
-                "name": "investigationType",
-                "value": ""
+                "name": "investigationType"
             },
             {
                 "type": "date",
                 "required": false,
                 "label": "Start Date",
                 "className": "form-control",
-                "name": "startDate",
-                "value": "2021-10-27"
+                "name": "startDate"
             },
             {
                 "type": "checkbox-group",
@@ -50,16 +47,14 @@ class FormBuilderDefaults {
                 "label": "Tasking",
                 "placeholder": "The objective of this case is to...",
                 "className": "form-control",
-                "name": "tasking",
-                "value": ""
+                "name": "tasking"
             },
             {
                 "type": "textarea",
                 "required": false,
                 "label": "Conclusions &amp; Recommendations",
                 "className": "form-control",
-                "name": "conclusions",
-                "value": ""
+                "name": "conclusions"
             }
         ],
         "subjects": [
@@ -69,8 +64,7 @@ class FormBuilderDefaults {
                 "label" : "Name",
                 "placeholder" : "John Doe",
                 "className" : "form-control",
-                "name" : "name",
-                "value": ""
+                "name" : "name"
             },
             {
                 "type" : "text",
@@ -78,8 +72,7 @@ class FormBuilderDefaults {
                 "label" : "Description",
                 "placeholder" : "Subject 1",
                 "className" : "form-control",
-                "name" : "description",
-                "value": ""
+                "name" : "description"
             },
             {
                 "type" : "textarea",
@@ -87,8 +80,7 @@ class FormBuilderDefaults {
                 "label" : "Notes",
                 "placeholder" : "Additional notes go here...",
                 "className" : "form-control",
-                "name" : "notes",
-                "value": ""
+                "name" : "notes"
             }
         ],
         "addresses": [
@@ -98,8 +90,7 @@ class FormBuilderDefaults {
                 "label" : "Address",
                 "placeholder" : "123 Main St., Plainfield, VT, 05301",
                 "className" : "form-control",
-                "name" : "address",
-                "value": ""
+                "name" : "address"
             },
             {
                 "type" : "text",
@@ -107,8 +98,7 @@ class FormBuilderDefaults {
                 "label" : "Description",
                 "placeholder" : "Home of Subject",
                 "className" : "form-control",
-                "name" : "description",
-                "value": ""
+                "name" : "description"
             },
             {
                 "type" : "textarea",
@@ -116,8 +106,7 @@ class FormBuilderDefaults {
                 "label" : "Notes",
                 "placeholder" : "Additional notes go here...",
                 "className" : "form-control",
-                "name" : "notes",
-                "value": ""
+                "name" : "notes"
             }
         ],
         "vehicles": [
@@ -127,8 +116,7 @@ class FormBuilderDefaults {
                 "label" : "Vehicle",
                 "placeholder" : "1999 / VW Jetta / Green / ABC123",
                 "className" : "form-control",
-                "name" : "vehicle",
-                "value": ""
+                "name" : "vehicle"
             },
             {
                 "type" : "text",
@@ -136,8 +124,7 @@ class FormBuilderDefaults {
                 "label" : "Description",
                 "placeholder" : "Vehicle of Subject",
                 "className" : "form-control",
-                "name" : "description",
-                "value": ""
+                "name" : "description"
             },
             {
                 "type" : "textarea",
@@ -145,8 +132,7 @@ class FormBuilderDefaults {
                 "label" : "Notes",
                 "placeholder" : "Additional notes go here...",
                 "className" : "form-control",
-                "name" : "notes",
-                "value": ""
+                "name" : "notes"
             }
         ]
     };

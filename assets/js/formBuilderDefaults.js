@@ -8,7 +8,7 @@ class FormBuilderDefaults {
             cases: [
                 {
                     caseNumber: 0,
-                    dateCreated: new Date(), // defaults to the current date upon creating
+                    dateCreated: new Date(), // Type Date - defaults to the current date upon creating
                     lastUpdated: null, // Type Date - defaults to null upon being initially created
                     reportGenerated: null, // Type Date - defaults to null upon being initially created
                     general: [

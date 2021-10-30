@@ -3,7 +3,7 @@ class FormBuilderDefaults {
     // TODO incorporate into form builder
     static DEFAULT_CASE_SCHEMA = [
         {
-            userId: "w4sGxWrab8h8a2yn9",
+            userId: "",
             // the cases being created are an array, and can be queried based on the case number
             cases: [
                 {
